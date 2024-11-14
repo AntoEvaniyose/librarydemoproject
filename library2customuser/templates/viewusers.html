@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>View users</h2>
+
+<table class="table table-secondary table-striped table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Place</th>
+        <th>Gender</th>
+        <th>Email</th>
+    </tr>
+
+    {% for i in Users %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.place}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.email}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!--<ol>-->
+<!--    {% for i in Users %}-->
+<!--    <li>-->
+<!--        <ul>-->
+<!--            <li>Name:{{i.name}}</li>-->
+<!--            <li>Age:{{i.age}}</li>-->
+<!--            <li>Place:{{i.place}}</li>-->
+<!--            <li>Gender:{{i.gender}}</li>-->
+<!--            <li>Email:{{i.email}}</li>-->
+<!--        </ul>-->
+<!--    </li>-->
+<!--    {% endfor %}-->
+<!--</ol>-->
+
+{% endblock %}

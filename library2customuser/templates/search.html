@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Search Books</h2>
+<table class="table table-secondary table-striped table-hover">
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Price</th>
+        <th>Language</th>
+        <th>Cover</th>
+        <th>PDF</th>
+
+    </tr>
+
+    {% for i in Book %}
+    <tr>
+        <td>{{i.title}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.pages}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.language}}</td>
+        <td><img src="{{i.cover.url}}" height="100px" width="150px"></td>
+        <td><a href="{{i.pdf.url}}">Download</a></td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}
